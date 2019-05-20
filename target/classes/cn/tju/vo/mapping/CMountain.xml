@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="cn.tju.vo.mapping.CMountainNS">
+	<insert id="doCreate" parameterType="CMountain" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO c_mean_mountain(chr,cancerName,NL,NY,TL,TY)
+		VALUES (#{chr},#{cancerName},#{NL},#{NY},#{TL},#{TY}) ;
+	</insert>
+</mapper>

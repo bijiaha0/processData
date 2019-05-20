@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--导入属性配置-->
+    <properties resource="datasource.properties"></properties>
+
+    <!--指定特定数据库的jdbc驱动jar包的位置-->
+    <classPathEntry location="${db.driverLocation}"/>
+
+    <context id="default" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <!-- optional，旨在创建class时，对注释进行控制 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--jdbc的数据库连接 -->
+        <jdbcConnection
+                driverClass="${db.driverClassName}"
+                connectionURL="${db.url}"
+                userId="${db.username}"
+                password="${db.password}">
+        </jdbcConnection>
+
+
+        <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+
+        <!-- Model模型生成器,用来生成含有主键key的类，记录类 以及查询Example类
+            targetPackage     指定生成的model生成所在的包名
+            targetProject     指定在该项目下所在的路径
+        -->
+        <!--<javaModelGenerator targetPackage="com.mmall.pojo" targetProject=".\src\main\java">-->
+        <javaModelGenerator targetPackage="cn.tju.pojo" targetProject="./src/main/java">
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 是否对model添加 构造函数 -->
+            <property name="constructorBased" value="true"/>
+            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            <property name="trimStrings" value="true"/>
+            <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
+            <property name="immutable" value="false"/>
+        </javaModelGenerator>
+
+        <!--mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
+        <!--<sqlMapGenerator targetPackage="mappers" targetProject=".\src\main\resources">-->
+        <sqlMapGenerator targetPackage="mappers" targetProject="./src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码
+                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
+                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
+                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
+        -->
+
+        <!-- targetPackage：mapper接口dao生成的位置 -->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.mmall.dao" targetProject=".\src\main\java">-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.tju.dao" targetProject="./src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+
+        <table tableName="acc_c_new" domainObjectName="AccCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="blca_c_new" domainObjectName="BlcaCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="brca_c_new" domainObjectName="BrcaCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="cesc_c_new" domainObjectName="CescCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="chol_c_new" domainObjectName="CholCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="coad_c_new" domainObjectName="CoadCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="dlbc_c_new" domainObjectName="DlbcCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="esca_c_new" domainObjectName="EscaCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="gbm_c_new" domainObjectName="GbmCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="hnsc_c_new" domainObjectName="HnscCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kich_c_new" domainObjectName="KichCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirc_c_new" domainObjectName="KircCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirp_c_new" domainObjectName="KirpCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="laml_c_new" domainObjectName="LamlCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lgg_c_new" domainObjectName="LggCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lihc_c_new" domainObjectName="LihcCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="luad_c_new" domainObjectName="LuadCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lusc_c_new" domainObjectName="LuscCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="meso_c_new" domainObjectName="MesoCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ov_c_new" domainObjectName="OvCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="paad_c_new" domainObjectName="PaadCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="pcpg_c_new" domainObjectName="PcpgCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="prad_c_new" domainObjectName="PradCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="read_c_new" domainObjectName="ReadCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="sarc_c_new" domainObjectName="SarcCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="skcm_c_new" domainObjectName="SkcmCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="stad_c_new" domainObjectName="StadCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="tgct_c_new" domainObjectName="TgctCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thca_c_new" domainObjectName="ThcaCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thym_c_new" domainObjectName="ThymCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucec_c_new" domainObjectName="UcecCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucs_c_new" domainObjectName="UcsCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="uvm_c_new" domainObjectName="UvmCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+
+
+        <table tableName="acc_e_new" domainObjectName="AccENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="blca_e_new" domainObjectName="BlcaENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="brca_e_new" domainObjectName="BrcaENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="cesc_e_new" domainObjectName="CescENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="chol_e_new" domainObjectName="CholENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="coad_e_new" domainObjectName="CoadENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="dlbc_e_new" domainObjectName="DlbcENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="esca_e_new" domainObjectName="EscaENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="gbm_e_new" domainObjectName="GbmENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="hnsc_e_new" domainObjectName="HnscENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kich_e_new" domainObjectName="KichENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirc_e_new" domainObjectName="KircENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirp_e_new" domainObjectName="KirpENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="laml_e_new" domainObjectName="LamlENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lgg_e_new" domainObjectName="LggENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lihc_e_new" domainObjectName="LihcENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="luad_e_new" domainObjectName="LuadENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lusc_e_new" domainObjectName="LuscENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="meso_e_new" domainObjectName="MesoENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ov_e_new" domainObjectName="OvENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="paad_e_new" domainObjectName="PaadENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="pcpg_e_new" domainObjectName="PcpgENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="prad_e_new" domainObjectName="PradENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="read_e_new" domainObjectName="ReadENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="sarc_e_new" domainObjectName="SarcENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="skcm_e_new" domainObjectName="SkcmENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="stad_e_new" domainObjectName="StadENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="tgct_e_new" domainObjectName="TgctENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thca_e_new" domainObjectName="ThcaENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thym_e_new" domainObjectName="ThymENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucec_e_new" domainObjectName="UcecENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucs_e_new" domainObjectName="UcsENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="uvm_e_new" domainObjectName="UvmENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+
+
+        <table tableName="acc_e_old" domainObjectName="AccEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="blca_e_old" domainObjectName="BlcaEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="brca_e_old" domainObjectName="BrcaEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="cesc_e_old" domainObjectName="CescEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="chol_e_old" domainObjectName="CholEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="coad_e_old" domainObjectName="CoadEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="dlbc_e_old" domainObjectName="DlbcEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="esca_e_old" domainObjectName="EscaEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="gbm_e_old" domainObjectName="GbmEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="hnsc_e_old" domainObjectName="HnscEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kich_e_old" domainObjectName="KichEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirc_e_old" domainObjectName="KircEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirp_e_old" domainObjectName="KirpEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="laml_e_old" domainObjectName="LamlEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lgg_e_old" domainObjectName="LggEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lihc_e_old" domainObjectName="LihcEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="luad_e_old" domainObjectName="LuadEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lusc_e_old" domainObjectName="LuscEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="meso_e_old" domainObjectName="MesoEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ov_e_old" domainObjectName="OvEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="paad_e_old" domainObjectName="PaadEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="pcpg_e_old" domainObjectName="PcpgEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="prad_e_old" domainObjectName="PradEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="read_e_old" domainObjectName="ReadEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="sarc_e_old" domainObjectName="SarcEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="skcm_e_old" domainObjectName="SkcmEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="stad_e_old" domainObjectName="StadEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="tgct_e_old" domainObjectName="TgctEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thca_e_old" domainObjectName="ThcaEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thym_e_old" domainObjectName="ThymEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucec_e_old" domainObjectName="UcecEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucs_e_old" domainObjectName="UcsEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="uvm_e_old" domainObjectName="UvmEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="acc_c_old" domainObjectName="AccCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="blca_c_old" domainObjectName="BlcaCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="brca_c_old" domainObjectName="BrcaCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="cesc_c_old" domainObjectName="CescCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="chol_c_old" domainObjectName="CholCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="coad_c_old" domainObjectName="CoadCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="dlbc_c_old" domainObjectName="DlbcCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="esca_c_old" domainObjectName="EscaCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="gbm_c_old" domainObjectName="GbmCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="hnsc_c_old" domainObjectName="HnscCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kich_c_old" domainObjectName="KichCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirc_c_old" domainObjectName="KircCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="kirp_c_old" domainObjectName="KirpCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="laml_c_old" domainObjectName="LamlCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lgg_c_old" domainObjectName="LggCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lihc_c_old" domainObjectName="LihcCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="luad_c_old" domainObjectName="LuadCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="lusc_c_old" domainObjectName="LuscCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="meso_c_old" domainObjectName="MesoCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ov_c_old" domainObjectName="OvCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="paad_c_old" domainObjectName="PaadCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="pcpg_c_old" domainObjectName="PcpgCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="prad_c_old" domainObjectName="PradCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="read_c_old" domainObjectName="ReadCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="sarc_c_old" domainObjectName="SarcCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="skcm_c_old" domainObjectName="SkcmCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="stad_c_old" domainObjectName="StadCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="tgct_c_old" domainObjectName="TgctCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thca_c_old" domainObjectName="ThcaCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="thym_c_old" domainObjectName="ThymCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucec_c_old" domainObjectName="UcecCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="ucs_c_old" domainObjectName="UcsCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="uvm_c_old" domainObjectName="UvmCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="value_n_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_n_y" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_l" jdbcType="VARCHAR" />
+            <columnOverride column="value_t_y" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sample_c_new" domainObjectName="sampleCNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="sample_id_n" jdbcType="VARCHAR" />
+            <columnOverride column="sample_id_t" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sample_e_new" domainObjectName="sampleENew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="sample_id_n" jdbcType="VARCHAR" />
+            <columnOverride column="sample_id_t" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sample_c_old" domainObjectName="sampleCOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="sample_id_n" jdbcType="VARCHAR" />
+            <columnOverride column="sample_id_t" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sample_e_old" domainObjectName="sampleEOld" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="sample_id_n" jdbcType="VARCHAR" />
+            <columnOverride column="sample_id_t" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="c_n_l_new_moutain" domainObjectName="cNLNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="c_n_y_new_moutain" domainObjectName="cNYNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="c_t_l_new_moutain" domainObjectName="cTLNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="c_t_y_new_moutain" domainObjectName="cTYNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+
+        <table tableName="c_n_l_old_moutain" domainObjectName="cNLOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="c_n_y_old_moutain" domainObjectName="cNYOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="c_t_l_old_moutain" domainObjectName="cTLOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="c_t_y_old_moutain" domainObjectName="cTYOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+
+
+        <table tableName="e_n_l_new_moutain" domainObjectName="eNLNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="e_n_y_new_moutain" domainObjectName="eNYNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="e_t_l_new_moutain" domainObjectName="eTLNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="e_t_y_new_moutain" domainObjectName="eTYNewMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+
+
+        <table tableName="e_n_l_old_moutain" domainObjectName="eNLOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="e_n_y_old_moutain" domainObjectName="eNYOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="e_t_l_old_moutain" domainObjectName="eTLOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+        <table tableName="e_t_y_old_moutain" domainObjectName="eTYOldMoutain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+
+
+        <!-- geelynote mybatis插件的搭建 -->
+    </context>
+</generatorConfiguration>

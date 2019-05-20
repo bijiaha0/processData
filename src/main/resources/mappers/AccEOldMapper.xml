@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.tju.dao.AccEOldMapper" >
+  <resultMap id="BaseResultMap" type="cn.tju.pojo.AccEOld" >
+    <constructor >
+      <idArg column="gene_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="value_n_l" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="value_n_y" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="value_t_l" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="value_t_y" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    gene_id, value_n_l, value_n_y, value_t_l, value_t_y
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from acc_e_old
+    where gene_id = #{geneId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from acc_e_old
+    where gene_id = #{geneId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.tju.pojo.AccEOld" >
+    insert into acc_e_old (gene_id, value_n_l, value_n_y, 
+      value_t_l, value_t_y)
+    values (#{geneId,jdbcType=INTEGER}, #{valueNL,jdbcType=VARCHAR}, #{valueNY,jdbcType=VARCHAR}, 
+      #{valueTL,jdbcType=VARCHAR}, #{valueTY,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.tju.pojo.AccEOld" >
+    insert into acc_e_old
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="geneId != null" >
+        gene_id,
+      </if>
+      <if test="valueNL != null" >
+        value_n_l,
+      </if>
+      <if test="valueNY != null" >
+        value_n_y,
+      </if>
+      <if test="valueTL != null" >
+        value_t_l,
+      </if>
+      <if test="valueTY != null" >
+        value_t_y,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="geneId != null" >
+        #{geneId,jdbcType=INTEGER},
+      </if>
+      <if test="valueNL != null" >
+        #{valueNL,jdbcType=VARCHAR},
+      </if>
+      <if test="valueNY != null" >
+        #{valueNY,jdbcType=VARCHAR},
+      </if>
+      <if test="valueTL != null" >
+        #{valueTL,jdbcType=VARCHAR},
+      </if>
+      <if test="valueTY != null" >
+        #{valueTY,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.tju.pojo.AccEOld" >
+    update acc_e_old
+    <set >
+      <if test="valueNL != null" >
+        value_n_l = #{valueNL,jdbcType=VARCHAR},
+      </if>
+      <if test="valueNY != null" >
+        value_n_y = #{valueNY,jdbcType=VARCHAR},
+      </if>
+      <if test="valueTL != null" >
+        value_t_l = #{valueTL,jdbcType=VARCHAR},
+      </if>
+      <if test="valueTY != null" >
+        value_t_y = #{valueTY,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where gene_id = #{geneId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.tju.pojo.AccEOld" >
+    update acc_e_old
+    set value_n_l = #{valueNL,jdbcType=VARCHAR},
+      value_n_y = #{valueNY,jdbcType=VARCHAR},
+      value_t_l = #{valueTL,jdbcType=VARCHAR},
+      value_t_y = #{valueTY,jdbcType=VARCHAR}
+    where gene_id = #{geneId,jdbcType=INTEGER}
+  </update>
+</mapper>

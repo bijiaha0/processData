@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.tju.dao.sampleCNewMapper" >
+  <resultMap id="BaseResultMap" type="cn.tju.pojo.sampleCNew" >
+    <constructor >
+      <arg column="cancer_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sample_id_n" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sample_id_t" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="cn.tju.pojo.sampleCNew" >
+    insert into sample_c_new (cancer_name, sample_id_n, sample_id_t
+      )
+    values (#{cancerName,jdbcType=VARCHAR}, #{sampleIdN,jdbcType=VARCHAR}, #{sampleIdT,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.tju.pojo.sampleCNew" >
+    insert into sample_c_new
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cancerName != null" >
+        cancer_name,
+      </if>
+      <if test="sampleIdN != null" >
+        sample_id_n,
+      </if>
+      <if test="sampleIdT != null" >
+        sample_id_t,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cancerName != null" >
+        #{cancerName,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleIdN != null" >
+        #{sampleIdN,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleIdT != null" >
+        #{sampleIdT,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

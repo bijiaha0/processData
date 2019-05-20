@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.tju.dao.cNYNewMoutainMapper" >
+  <resultMap id="BaseResultMap" type="cn.tju.pojo.cNYNewMoutain" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="gene_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="cancer_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="mid" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="mean" jdbcType="DOUBLE" javaType="java.lang.Double" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, gene_id, cancer_name, mid, mean
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from c_n_y_new_moutain
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from c_n_y_new_moutain
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.tju.pojo.cNYNewMoutain" >
+    insert into c_n_y_new_moutain (id, gene_id, cancer_name, 
+      mid, mean)
+    values (#{id,jdbcType=INTEGER}, #{geneId,jdbcType=INTEGER}, #{cancerName,jdbcType=VARCHAR}, 
+      #{mid,jdbcType=DOUBLE}, #{mean,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.tju.pojo.cNYNewMoutain" >
+    insert into c_n_y_new_moutain
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="geneId != null" >
+        gene_id,
+      </if>
+      <if test="cancerName != null" >
+        cancer_name,
+      </if>
+      <if test="mid != null" >
+        mid,
+      </if>
+      <if test="mean != null" >
+        mean,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="geneId != null" >
+        #{geneId,jdbcType=INTEGER},
+      </if>
+      <if test="cancerName != null" >
+        #{cancerName,jdbcType=VARCHAR},
+      </if>
+      <if test="mid != null" >
+        #{mid,jdbcType=DOUBLE},
+      </if>
+      <if test="mean != null" >
+        #{mean,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.tju.pojo.cNYNewMoutain" >
+    update c_n_y_new_moutain
+    <set >
+      <if test="geneId != null" >
+        gene_id = #{geneId,jdbcType=INTEGER},
+      </if>
+      <if test="cancerName != null" >
+        cancer_name = #{cancerName,jdbcType=VARCHAR},
+      </if>
+      <if test="mid != null" >
+        mid = #{mid,jdbcType=DOUBLE},
+      </if>
+      <if test="mean != null" >
+        mean = #{mean,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.tju.pojo.cNYNewMoutain" >
+    update c_n_y_new_moutain
+    set gene_id = #{geneId,jdbcType=INTEGER},
+      cancer_name = #{cancerName,jdbcType=VARCHAR},
+      mid = #{mid,jdbcType=DOUBLE},
+      mean = #{mean,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
